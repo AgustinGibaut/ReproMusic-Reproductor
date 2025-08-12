@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReroMusic</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   
+    <div class="galaxy-container">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="particles"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>reproduce tus canciones</h1>
+            <p>de forma gratuita</p>
+        </div>
+
+      
+        <div class="upload-section">
+            <input type="file" id="cargarCancion" multiple accept="audio/*" hidden>
+            <button id="uploadBtn" class="upload-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7,10 12,15 17,10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Subir Música
+            </button>
+        </div>
+
+        <div class="player">
+            <div class="album-art-container">
+                <div class="album-cover">
+                    <img id="albumImage" src="/placeholder.svg?height=200&width=200" alt="Album Cover">
+                    <div class="vinyl-record" id="vinylRecord">
+                        <div class="vinyl-inner">
+                            <div class="vinyl-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-info">
+                <h2 id="tituloCancion">Sin canción</h2>
+                <p id="artistaCancion">Selecciona una canción</p>
+            </div>
+
+            <div class="progress-section">
+                <div class="time-display">
+                    <span id="tiempoActual">0:00</span>
+                    <span id="tiempoTotal">0:00</span>
+                </div>
+                <div class="progress-container">
+                    <input type="range" id="barraProgreso" class="progress-bar" min="0" max="100" value="0">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="btnShuffle" class="control-btn">
+                    <i class="fas fa-random"></i>
+                </button>
+
+                <button id="btnAnterior" class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+
+                <button id="btnPlay" class="play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+
+                <button id="btnSiguiente" class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+
+                <button id="btnRepeat" class="control-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+
+            <div class="volume-section">
+                <button id="btnVolumen" class="control-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-slider">
+                    <input type="range" id="volumenSlider" min="0" max="100" value="50">
+                </div>
+            </div>
+        </div>
+
+        <div class="playlist" id="playlist">
+            <div class="playlist-header">
+                <h3>Lista de Reproducción</h3>
+                <button id="btnClearPlaylist" class="clear-btn">Limpiar</button>
+            </div>
+            <ul class="playlist-items" id="listaCanciones"></ul>
+        </div>
+
+       
+        <div class="visualizer">
+            <div class="visualizer-bars" id="visualizerBars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="index.js"></script>
+</body>
+</html>
